@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1 id="result"></h1>
+<table width="300px">
+    <tr>
+        <th>Amount</th>
+        <th>From Currency</th>
+        <th>To Currency</th>
+        <td></td>
+    </tr>
+    <tr>
+        <td><input id="amount" type="text"></td>
+        <td>
+            <select id="select1" onchange="changeMoney()">
+                <option value="VND">Vietnam</option>
+                <option value="USD">USD</option>
+            </select>
+        </td>
+        <td>
+            <select id="select2" onchange="changeMoney()">
+                <option value="USD">USD</option>
+                <option value="VND">Vietnam</option>
+            </select>
+        </td>
+        <td>
+            <button onclick="changeMoney()">Convert</button>
+        </td>
+    </tr>
+</table>
+
+<script>
+    function changeMoney() {
+        let amount = +document.getElementById('amount').value;
+        console.log('amount',amount)
+        let select1 = document.getElementById('select1').value;
+        console.log('select1',select1)
+        let select2 = document.getElementById('select2').value;
+        console.log('select2',select2)
+        let result= amount/23000;
+        if (select1==='VND') {
+            document.getElementById('select2').value = 'USD'
+            document.getElementById('result').innerText=result;
+        } else {
+            document.getElementById('select2').value = 'VND'
+            document.getElementById('result').innerText= amount*23000;
+        }
+    }
+
+</script>
+</body>
+</html>

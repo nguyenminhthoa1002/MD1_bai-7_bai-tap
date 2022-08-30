@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--<script>-->
+<!--let a=Number(prompt('Nhập bán kính đường tròn'));-->
+<!--const PI = Math.PI;-->
+<!--let dienTichhinhTron = PI*Math.pow(a,2);-->
+<!--document.write('Diện tích hình tròn: '+ dienTichhinhTron);-->
+<!--</script>-->
+
+<label> Radious: </label>
+<input id="radious" type="text">
+<button onclick="dientichvachuvi()"> Tính chu vi và diện tích</button>
+<h1 id="chuvi"></h1>
+<h1 id="dientich"></h1>
+<script>
+    function dientichvachuvi() {
+        let radious = document.getElementById('radious').value;
+        let chuVi = 2*Math.PI*radious
+        let dienTich = Math.PI*Math.pow(radious,2);
+        document.getElementById('chuvi').innerHTML = 'Chu vi hình tròn: '+chuVi;
+        document.getElementById('dientich').innerHTML = 'Diện tích hình tròn: '+dienTich;
+    }
+</script>
+</body>
+</html>
